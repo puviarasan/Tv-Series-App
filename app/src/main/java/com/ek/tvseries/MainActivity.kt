@@ -24,7 +24,18 @@ class MainActivity : ComponentActivity() {
         setContent {
             TvSeriesTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-
+                    val navController = rememberNavController()
+                    NavHost(
+                        navController = navController,
+                        startDestination = Screen.TvSeriesListScreen.route
+                    ) {
+                        composable(route = Screen.TvSeriesListScreen.route) {
+                            TvSeriesComposable(navController = navController)
+                        }
+                        composable(route = Screen.TvSeriesDetailScreen.route + "/{series_id}") {
+                            TvSeriesDetailComposable()
+                        }
+                    }
                 }
             }
         }

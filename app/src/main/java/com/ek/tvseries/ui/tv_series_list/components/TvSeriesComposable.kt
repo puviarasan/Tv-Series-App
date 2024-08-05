@@ -45,7 +45,7 @@ fun TvSeriesComposable(
             ) {
                 items(state.tvSeries) { tvSeries ->
                     TvSeriesItem(tvSeries = tvSeries, onItemClick = {
-                        navController.navigate(Screen.TvSeriesDetailScreen.route + "/${tvSeries.name}")
+                        navController.navigate(Screen.TvSeriesDetailScreen.route + "/${tvSeries.seriesId}")
                     })
                 }
             }

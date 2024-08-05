@@ -53,7 +53,7 @@ fun TvSeriesItem(
                     ),
                     contentDescription = "TV Series Poster",
                     modifier = Modifier
-                        .size(150.dp)
+                        .size(180.dp)
                         .clip(RoundedCornerShape(8.dp))
                         .fillMaxWidth()
                         .clickable {
@@ -68,7 +68,7 @@ fun TvSeriesItem(
                 Text(
                     tvSeries.overView,
                     style = MaterialTheme.typography.bodySmall,
-                    maxLines = 3,
+                    maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
             }
@@ -83,7 +83,8 @@ fun TvSeriesItemPreview() {
         tvSeries = TvSeriesListModel(
             name = "stranger things",
             overView = "When a young boy disappears, his mother must confront terrifying forces.",
-            imageUrl = ""
+            imageUrl = "",
+            seriesId = 0
         ),
         onItemClick = {}
     )

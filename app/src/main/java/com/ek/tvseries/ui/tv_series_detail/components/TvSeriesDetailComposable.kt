@@ -13,6 +13,6 @@ import com.ek.tvseries.ui.tv_series_detail.TvSeriesDetailViewmodel
 fun TvSeriesDetailComposable(viewmodel: TvSeriesDetailViewmodel = hiltViewModel()) {
     val state = viewmodel.tvSeriesState.value
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text(text = state)
+        state.seriesDetail?.name?.let { Text(text = it) }
     }
 }
