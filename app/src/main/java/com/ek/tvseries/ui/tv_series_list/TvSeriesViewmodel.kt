@@ -41,4 +41,12 @@ class TvSeriesViewmodel @Inject constructor(
             }
         }.launchIn(viewModelScope)
     }
+
+    fun onSearchQueryChanged(query: String) {
+        _tvSeriesState.value = _tvSeriesState.value.copy(searchQuery = query)
+    }
+
+    fun searchSeries() {
+
+    }
 }
