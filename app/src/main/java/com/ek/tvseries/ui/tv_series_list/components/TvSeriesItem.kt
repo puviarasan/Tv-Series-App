@@ -34,7 +34,10 @@ fun TvSeriesItem(
     Card(
         modifier = Modifier
             .padding(8.dp)
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .clickable {
+                onItemClick(tvSeries)
+            },
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
         shape = RoundedCornerShape(8.dp)
     ) {
@@ -56,9 +59,6 @@ fun TvSeriesItem(
                         .size(180.dp)
                         .clip(RoundedCornerShape(8.dp))
                         .fillMaxWidth()
-                        .clickable {
-                            onItemClick(tvSeries)
-                        }
                         .padding(top = 8.dp)
                 )
             }

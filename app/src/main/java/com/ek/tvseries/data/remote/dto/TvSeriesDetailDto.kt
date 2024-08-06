@@ -75,8 +75,12 @@ fun TvSeriesDetailDto.toSeriesDetail(): SeriesDetailModel {
     return SeriesDetailModel(
         name = name,
         image = posterPath,
-        cast = "",
         synopsis = overview,
-        episodes = numberOfEpisodes.toString()
+        episodes = numberOfEpisodes.toString(),
+        posterUrl = backdropPath,
+        description = overview,
+        genre = genres.map { it.name },
+        numberOfSeasons = numberOfSeasons,
+        id = id
     )
 }
