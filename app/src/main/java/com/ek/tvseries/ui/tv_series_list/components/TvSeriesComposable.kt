@@ -16,6 +16,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.ek.tvseries.ui.common_components.TvAppBar
 import com.ek.tvseries.ui.tv_series_list.TvSeriesViewmodel
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 
 @Composable
 fun TvSeriesComposable(
@@ -29,24 +31,29 @@ fun TvSeriesComposable(
     Scaffold(
         topBar = { TvAppBar(name = "TV Series") }
     ) {
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(top = it.calculateTopPadding(), bottom = it.calculateBottomPadding())
-        ) {
-            SeriesSearchBar(state, tvSeriesViewmodel, keyboardController, focusManager)
-            TvSeriesList(it, state, navController)
-            if (state.error.isNotBlank()) {
-                Text(
-                    text = state.error,
-                    color = MaterialTheme.colorScheme.error,
-                    modifier = Modifier.align(
-                        Alignment.Center
+        SwipeRefresh(
+            state = rememberSwipeRefreshState(isRefreshing = state.isRefreshing),
+            onRefresh = { tvSeriesViewmodel.getTvSeries() }) {
+
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(top = it.calculateTopPadding(), bottom = it.calculateBottomPadding())
+            ) {
+                SeriesSearchBar(state, tvSeriesViewmodel, keyboardController, focusManager)
+                TvSeriesList(it, state, navController)
+                if (state.error.isNotBlank()) {
+                    Text(
+                        text = state.error,
+                        color = MaterialTheme.colorScheme.error,
+                        modifier = Modifier.align(
+                            Alignment.Center
+                        )
                     )
-                )
-            }
-            if (state.isLoading) {
-                CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+                }
+                if (state.isLoading) {
+                    CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+                }
             }
         }
     }

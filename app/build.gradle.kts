@@ -76,6 +76,8 @@ dependencies {
     implementation(libs.androidx.navigation.runtime.ktx)
     kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+    //Swipe refresh
+    implementation(libs.google.accompanist.swiperefresh)
     // Coil
     implementation(libs.coil.compose)
     testImplementation(libs.junit)

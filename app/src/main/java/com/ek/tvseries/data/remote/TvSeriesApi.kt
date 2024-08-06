@@ -27,4 +27,11 @@ interface TvSeriesApi {
         @Query("language") language: String = "en-US"
     ): SeasonDetailDto
 
+    @GET("3/search/tv")
+    suspend fun searchTvSeries(
+        @Query("query") query: String,
+        @Query("language") language: String = "en-US",
+        @Query("page") page: Int = 1
+    ): TvSeriesListDto
+
 }

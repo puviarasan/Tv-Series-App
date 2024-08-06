@@ -8,4 +8,6 @@ interface TvSeriesRepository {
     suspend fun getPopularTvSeries(): TvSeriesListDto
     suspend fun getTvSeriesDetail(seriesId: Int): TvSeriesDetailDto
     suspend fun getSeasonDetail(seriesId: Int, seasonNumber: Int): SeasonDetailDto
+    suspend fun searchTvSeries(query: String): TvSeriesListDto
+
 }

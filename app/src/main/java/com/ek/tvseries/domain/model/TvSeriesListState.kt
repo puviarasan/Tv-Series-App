@@ -4,5 +4,6 @@ data class TvSeriesListState(
     val isLoading: Boolean = false,
     val tvSeries: List<TvSeriesListModel> = emptyList(),
     val error: String = "",
-    val searchQuery: String = ""
+    val searchQuery: String = "",
+    val isRefreshing: Boolean = false
 )

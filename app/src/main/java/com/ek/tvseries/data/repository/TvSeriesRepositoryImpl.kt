@@ -21,4 +21,8 @@ class TvSeriesRepositoryImpl @Inject constructor(private val api: TvSeriesApi) :
         return api.getSeasonDetail(seriesId, seasonNumber)
     }
 
+    override suspend fun searchTvSeries(query: String): TvSeriesListDto {
+        return api.searchTvSeries(query)
+    }
+
 }
