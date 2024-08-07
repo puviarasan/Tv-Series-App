@@ -1,27 +1,37 @@
-Tv Series
+**Tv Series App
+**
+The Tv Series app leverages the The Movie Database (TMDb) API to fetch and display popular TV series. It is built using modern Android development tools including Jetpack Compose, Dagger Hilt, Retrofit, Coroutines, and Flow.
+**App UI
+**
+Here are some screenshots showcasing the app's UI:
 
-Tv Series app uses api from api.themoviedb.org to retrieve popular series and display them. It utilizes Jetpack Compose, Dagger Hilt, Retrofit, Coroutines, and Flow. 
-
-App UI:
-![Series_Details_3](https://github.com/user-attachments/assets/2a42c69f-6e7a-4e45-99a8-2eb001d50e53)
-![home](https://github.com/user-attachments/assets/2562d171-8ad3-45e1-8175-d02ec23e16f5)
-![Series_Details_1](https://github.com/user-attachments/assets/1984af45-07c1-441d-8c34-9a20fea82fe8)
-![Series_Details_2](https://github.com/user-attachments/assets/54fb95dd-01ac-4844-9fde-c150feb7dfdb)
-
-Tech stack & Open-source libraries
+**Tech Stack & Open-source Libraries
+**
 Minimum SDK level 26
-Kotlin - Modern, concise, and safe programming language.
-Dagger Hilt - Dagger Hilt is a dependency injection library for Android that reduces the boilerplate of doing manual dependency injection in your project.
-Kotlin Serialization - A compiler plugin that automatically produces visitor code for classes, and a runtime library that uses generated code to serialize objects without reflection.
-Coroutines - Asynchronous or non-blocking programming is an important part of the development landscape. Coroutines is our recommended solution for asynchronous programming on Android.
-Flow - An asynchronous data stream that sequentially emits values and completes normally or with an exception.
-Retrofit - A type-safe HTTP client for Android and Java.
-Jetpack Compose - Jetpack Compose is Android’s recommended modern toolkit for building native UI. It simplifies and accelerates UI development on Android.
-Coil - An image loading library for Android backed by Kotlin Coroutines.
-Material 3 - Material design components for building View layouts and Animations.
+Kotlin: Modern, concise, and safe programming language.
+Dagger Hilt: Dependency injection library that reduces the boilerplate of manual dependency injection.
+Kotlin Serialization: Compiler plugin that generates code for serializing objects without reflection.
+Coroutines: Recommended solution for asynchronous programming on Android.
+Flow: Asynchronous data stream that emits values sequentially.
+Retrofit: Type-safe HTTP client for Android and Java.
+Jetpack Compose: Modern toolkit for building native UI on Android, simplifying UI development.
+Coil: Image loading library backed by Kotlin Coroutines.
+Material 3: Material design components for building layouts and animations.
 
-App Architecture
-MVVM architecture and the Repository pattern.
+**App Architecture
+**
+The app is designed using the MVVM (Model-View-ViewModel) architecture and the Repository pattern to ensure clean separation of concerns and enhance maintainability.
+**Installation
+**
+To install the Tv Series app, you can use the provided APK file:
+**Shell Script
+**
+adb install path_to_apk
+
+**Usage
+**
+To use the app, simply launch it and browse through the list of popular TV series. Select any series to view detailed information.
+
 
 
 
