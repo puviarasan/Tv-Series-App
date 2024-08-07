@@ -5,7 +5,10 @@ The Tv Series app leverages the [The Movie Database (TMDb) API](https://www.them
 ## App UI
 
 Here are some screenshots showcasing the app's UI:
-
+![Home screen](/assets/home.png)
+![Series Detail](/assets/Series_Details_1.png)
+![Episode list](/assets/Series_Details_2.png)
+![Cast & Crew](/assets/Series_Details_3.png)
 
 
 ## Tech Stack & Open-source Libraries
