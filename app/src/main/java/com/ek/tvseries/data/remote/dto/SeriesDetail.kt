@@ -1,7 +1,6 @@
 package com.ek.tvseries.data.remote.dto
 
 
-import com.ek.tvseries.domain.model.TvSeriesListModel
 import com.google.gson.annotations.SerializedName
 
 data class SeriesDetail(
@@ -35,11 +34,3 @@ data class SeriesDetail(
     val voteCount: Int
 )
 
-fun SeriesDetail.toTvSeriesModel(): TvSeriesListModel {
-    return TvSeriesListModel(
-        name = name,
-        overView = overview,
-        imageUrl = posterPath,
-        seriesId = id
-    )
-}

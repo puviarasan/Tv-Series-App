@@ -27,14 +27,12 @@ fun TvSeriesComposable(
     val state = tvSeriesViewmodel.tvSeriesState.value
     val focusManager = LocalFocusManager.current
     val keyboardController = LocalSoftwareKeyboardController.current
-
-    Scaffold(
-        topBar = { TvAppBar(name = "TV Series") }
-    ) {
-        SwipeRefresh(
-            state = rememberSwipeRefreshState(isRefreshing = state.isRefreshing),
-            onRefresh = { tvSeriesViewmodel.getTvSeries() }) {
-
+    SwipeRefresh(
+        state = rememberSwipeRefreshState(isRefreshing = state.isRefreshing),
+        onRefresh = { tvSeriesViewmodel.getTvSeries() }) {
+        Scaffold(
+            topBar = { TvAppBar(name = "TV Series") }
+        ) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()

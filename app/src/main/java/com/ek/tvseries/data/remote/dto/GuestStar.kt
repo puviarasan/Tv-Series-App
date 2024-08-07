@@ -1,7 +1,6 @@
 package com.ek.tvseries.data.remote.dto
 
 
-import com.ek.tvseries.domain.model.CastDetails
 import com.google.gson.annotations.SerializedName
 
 data class GuestStar(
@@ -29,8 +28,3 @@ data class GuestStar(
     val profilePath: String
 )
 
-fun GuestStar.toCastDetail() = CastDetails(
-    name = originalName,
-    profileImage = profilePath,
-    job = character
-)

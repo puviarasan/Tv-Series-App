@@ -1,7 +1,6 @@
 package com.ek.tvseries.data.remote.dto
 
 
-import com.ek.tvseries.domain.model.EpisodeDetailModel
 import com.google.gson.annotations.SerializedName
 
 data class Episode(
@@ -35,10 +34,4 @@ data class Episode(
     val voteAverage: Double,
     @SerializedName("vote_count")
     val voteCount: Int
-)
-
-fun Episode.toEpisodeModel() = EpisodeDetailModel(
-    name = name,
-    episodeNumber = episodeNumber.toString(),
-    episodeImageUrl = stillPath
 )

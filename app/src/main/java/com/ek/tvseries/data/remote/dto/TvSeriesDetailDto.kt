@@ -1,14 +1,13 @@
 package com.ek.tvseries.data.remote.dto
 
 
-import com.ek.tvseries.domain.model.SeriesDetailModel
 import com.google.gson.annotations.SerializedName
 
 data class TvSeriesDetailDto(
     @SerializedName("adult")
     val adult: Boolean,
     @SerializedName("backdrop_path")
-    val backdropPath: String,
+    val backdropPath: String?,
     @SerializedName("created_by")
     val createdBy: List<Any>,
     @SerializedName("episode_run_time")
@@ -71,16 +70,3 @@ data class TvSeriesDetailDto(
     val voteCount: Int
 )
 
-fun TvSeriesDetailDto.toSeriesDetail(): SeriesDetailModel {
-    return SeriesDetailModel(
-        name = name,
-        image = posterPath,
-        synopsis = overview,
-        episodes = numberOfEpisodes.toString(),
-        posterUrl = backdropPath,
-        description = overview,
-        genre = genres.map { it.name },
-        numberOfSeasons = numberOfSeasons,
-        id = id
-    )
-}

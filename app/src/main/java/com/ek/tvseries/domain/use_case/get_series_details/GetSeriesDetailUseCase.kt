@@ -1,7 +1,7 @@
 package com.ek.tvseries.domain.use_case.get_series_details
 
 import com.ek.tvseries.common.Resource
-import com.ek.tvseries.data.remote.dto.toSeriesDetail
+import com.ek.tvseries.data.mappers.toSeriesDetail
 import com.ek.tvseries.domain.model.SeriesDetailModel
 import com.ek.tvseries.domain.repository.TvSeriesRepository
 import kotlinx.coroutines.flow.Flow

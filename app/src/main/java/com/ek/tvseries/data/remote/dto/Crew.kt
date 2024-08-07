@@ -1,7 +1,6 @@
 package com.ek.tvseries.data.remote.dto
 
 
-import com.ek.tvseries.domain.model.CastDetails
 import com.google.gson.annotations.SerializedName
 
 data class Crew(
@@ -27,10 +26,4 @@ data class Crew(
     val popularity: Double,
     @SerializedName("profile_path")
     val profilePath: String
-)
-
-fun Crew.toCrewModel() = CastDetails(
-    name = originalName,
-    profileImage = profilePath,
-    job = job
 )

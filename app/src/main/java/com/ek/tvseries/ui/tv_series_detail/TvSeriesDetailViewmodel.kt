@@ -33,7 +33,7 @@ class TvSeriesDetailViewmodel @Inject constructor(
         }
     }
 
-    private fun getSeriesDetails(tvSeriesId: Int) {
+    fun getSeriesDetails(tvSeriesId: Int) {
         getSeriesDetailUseCase(tvSeriesId).onEach { result ->
             when (result) {
                 is Resource.Success -> {

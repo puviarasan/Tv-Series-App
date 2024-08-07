@@ -1,7 +1,6 @@
 package com.ek.tvseries.data.remote.dto
 
 
-import com.ek.tvseries.domain.model.SeasonDetailModel
 import com.google.gson.annotations.SerializedName
 
 data class SeasonDetailDto(
@@ -21,13 +20,4 @@ data class SeasonDetailDto(
     val seasonNumber: Int,
     @SerializedName("vote_average")
     val voteAverage: Double
-)
-
-fun SeasonDetailDto.toSeasonDetailModel() = SeasonDetailModel(
-    posterPath = posterPath,
-    episodeNumber = episodes.size.toString(),
-    episodeDetails = episodes.map { it.toEpisodeModel() },
-    name = name,
-    crewDetails = episodes[0].crew.map { it.toCrewModel() },
-    castDetails = episodes[0].guestStars.map { it.toCastDetail() }
 )
